@@ -2,6 +2,31 @@
 *{
     font-family: 'Poppins',cursive;
 }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #000;
+}
+
+.night {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    filter: blur(0.1vmin);
+    z-index: -9999999;
+    background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+}
+
 body{
     color: azure;
     width: 100%;
@@ -17,12 +42,83 @@ body{
     font-weight: 900;
 }
 .greetings > span{
-    animation: glow 2.5s ease-in-out infinite;
+    animation: glow 3s ease-in-out infinite;
 }
 @keyframes glow{
     0%, 100%{
         color: #fff;
         text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
     }
+    10%, 90%{
+        color: #444444;
+        text-shadow: none;
     }
-        
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+.greetings > span:nth-child(7){
+    animation-delay: 1s;
+}
+.greetings > span:nth-child(8){
+    animation-delay: 1.2s;
+}
+.greetings > span:nth-child(9){
+    animation-delay: 1.4s;
+}
+.greetings > span:nth-child(10){
+    animation-delay: 1.6s;
+}
+.greetings > span:nth-child(11){
+    animation-delay: 1.8s;
+}
+.greetings > span:nth-child(12){
+    animation-delay: 2s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button button{
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 1rem;
+    color: #111;
+    background-color: #39c6d6;
+    border-radius: 15px;
+    border: none;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button button{
+        font-size: .5rem;
+    }
+}
+
+.space{
+    padding-inline: 15px;
+}
